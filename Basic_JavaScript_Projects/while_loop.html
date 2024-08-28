@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p id="counting_to_ten"></p>
+        <button onclick="count_to_ten()">Click here to start</button>
+        <script>
+            function count_to_ten() {
+                var digit = "";
+                var x = 1;
+                while (x < 11) {
+                    digit += "<br>" + x;
+                    x++
+                }
+                document.getElementById("counting_to_ten").innerHTML = digit;
+            }
+        </script>
+    </body>
+</html>
