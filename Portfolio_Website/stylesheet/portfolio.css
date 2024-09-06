@@ -1,0 +1,373 @@
+/***** GENERAL STYLING *****/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+body.fade-out {
+    opacity: .1;
+}
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+}
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+.white-text {
+    color: #fff;
+    padding-top: 10vh;
+}
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+.center {
+    text-align: center;
+}
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+q {
+    font-style: italic;
+}
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+img:hover {
+    filter: grayscale(5%);
+}
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+footer {
+    padding: 2%;
+    background-color: white;
+}
+/***** End of General Styling *****/
+
+/***** Navbar Styling *****/
+.Navbar {
+    overflow: hidden;
+    background-color: #473426;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 5s;
+    animation: moveNav 5s;
+}
+@keyframes moveNav {
+    from {left: -100vw;}
+    to { left: 0vw;}
+}
+.Navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: .75vw 1vw;
+    text-decoration: none;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 5.75s;
+    animation: moveNavText 5.75s;
+}
+@keyframes moveNavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width: 20%;
+        font-size: 12px;
+    }
+}
+.Navbar a:hover {
+    background-color: #f4f4f4;
+    color: rgb(86, 74, 47);
+    font-weight: bold;
+    cursor: pointer;
+}
+.Navbar a.active {
+    background-color: rgb(142, 123, 82);
+}
+/***** End of Navbar Styling *****/
+
+/***** Video Styling *****/
+#Typing_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+.Video_Text {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    height: 100vh;
+    padding-top: 2vh;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+/***** End of Video Styling *****/
+
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);
+}
+.mySlides {
+    display: none;
+}
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+.Slideshow_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%;
+}
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+.active, .dot:hover {
+    background-color: black;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+/***** End Slideshow Styling *****/
+
+/***** Table Styling *****/
+* {
+    box-sizing: border-box;
+}
+.Column_1 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #f2f2f2;
+}
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+    }
+}
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #2c1e15;
+}
+.Row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/***** End of Table Styling *****/
+
+/***** Contact Form Styling *****/
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+/* movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport */
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+/* Styling for the contact form */
+.form-popup {
+    border: 3px solid #f0f1f0; /* Creates a solid light gray border around the contact form */
+    z-index: 8; /* This z-index ensures the contact form shows above all other elements on the page */
+    display: none; /* Set the display to none, we will use JavaScript to show the contact form */
+    position: fixed; /* The form stays in the same location no matter what */
+    bottom: .5vw; /* Slightly up from the bottom of the viewport */
+    right: .5vw; /* Slightly in from the right side of the viewport */
+}
+
+/* Form styling */
+.form-container {
+    max-width: 49vw; /* Relative sizing of the form container - 49% of the viewport width */
+    padding: 1vw; /* Adds padding between the form-popup and the form-container */
+    background-color: white; 
+}
+
+/* Input fields */
+.form-container input[type=text] {
+    width: 100%; /* The input boxes completely fill the width of the form-container */
+    padding: .93vw; /* Adds padding to the input boxes */
+    margin: .6vw 0 .6vw 0; /* Adds space between the input boxes and the labels */
+    border: none; /* Removes the border from the input boxes */
+    background: Gainsboro; /* Sets the background color of the input boxes */
+    font-size: 1vw; /* Relative font sizing based on the width of the viewport */
+}
+
+/* General styling for all buttons */
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw; /* Adds slight spacing between the letters */
+    font-size: 1.5vw; /* Relative sizing of text */
+    font-weight: bold; 
+    padding: 1.5vw; /* Adds padding to the text in the button */
+    cursor: pointer; /* Changes the cursor to pointer over button elements */
+    width: 100%; /* Sets the width of the buttons to 100% of their containers */
+    height: auto; /* Allows the height to be resized depending on the content showing */
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; /* This makes the text in the buttons white when hovered over */
+    background-color: black; /* The background of the button changes to black when hovered over */
+    transition-duration: 1s; /* This makes the transition last 1 second */
+    -webkit-transition-duration: 1s; /* For Safari 4.0-8.0 */
+    border-color: silver; /* The border turns silver when the button is hovered over */
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: white; 
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh; /* Adds space between the submit button and the close button */
+}
+
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* Styling for close button on hover */
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+/***** End of Contact Form Styling *****/

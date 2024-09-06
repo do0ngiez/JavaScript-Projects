@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- external JS scripts for React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="My_React_Code"></div>
+    <!-- used new versions instead of deprecated methods -->
+    <script type="text/babel">
+      function Counter() {
+        const [timePassed, setTimePassed] = React.useState(0);
+
+        React.useEffect(() => {
+          const startCounting = new Date().getTime();
+          const interval = setInterval(() => {
+            setTimePassed(new Date().getTime() - startCounting);
+          }, 50);
+
+          return () => clearInterval(interval); // Clean up interval on component unmount
+        }, []);
+
+        const timeInSeconds = Math.round(timePassed / 100);
+        const secondsPassed = timeInSeconds / 10 + (timeInSeconds % 10 ? '' : '.0');
+        const text = `My React code started running ${secondsPassed} seconds ago!`;
+
+        return <p>{text}</p>;
+      }
+
+      ReactDOM.createRoot(document.getElementById('My_React_Code')).render(<Counter />);
+    </script>
+  </body>
+</html>

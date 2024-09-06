@@ -25,3 +25,19 @@ function my_Function() {
 function not_Function() {
     document.getElementById("Not").innerHTML = !(5>10);
 }
+
+document.body.classList.add('fade-out');
+window.addEventListener('DOMContentLoaded', () => {
+document.body.classList.remove('fade-out');
+});
+
+function validateForm() {
+    let fname = document.forms["myForm"]["fname"].value;
+    let lname = document.forms["myForm"]["lname"].value;
+    let phonenum = document.forms["myForm"]["phonenum"].value;
+
+    if (fname == "" || lname == "" || phonenum == "") {
+        alert("All fields must be filled out!");
+        return false;
+    }
+}

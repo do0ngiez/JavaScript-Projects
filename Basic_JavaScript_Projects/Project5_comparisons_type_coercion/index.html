@@ -5,7 +5,19 @@
         <script src="JS/main.js"></script>
     </head>
     <body>
-        <p id="Test" onclick="my_Function()">Click here!</p>
+        <p id="Test" style="font-size:8vw;" onclick="my_Function()">Click here!</p>
         <p id="Not" onclick="not_Function()">Click to view NOT function !(5 > 10)</p>
+
+        <h2>HTML Forms</h2>
+
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <label for="phonenum">Phone Number</label><br>
+            <input type="text" id="phonenum" name="phonenum" value="+63"><br><br>
+            <input type="submit" value="Submit">
+        </form> 
     </body>
 </html>
